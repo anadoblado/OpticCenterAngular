@@ -1,0 +1,138 @@
+<div class="main-div">
+    <mat-card class="loginCard">
+        <mat-card-header class="centrarTitulo">
+            <mat-card-title>Nuevo cliente</mat-card-title>
+        </mat-card-header>
+        <br>
+        <mat-card-content>
+            <form [formGroup]="form">
+                <div id="divCambiarImagen">
+                    <button mat-button (click)="fileInput.click()">
+                        <img mat-card-image src="assets/images/usuarioGenerico.jpg" alt="">
+                    </button>
+                    <input hidden (change)="usuarioSeleccionaFicheroImagen()" #fileInput type="file" id="file">
+                </div>
+                <p style="text-align: center; margin-bottom: 25px;">Clic sobre la imagen para cambiarla</p>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Nombre</mat-label>
+                    <input matInput type="text" placeholder="Placeholder" formControlName="nombre">
+                    <ng-container *ngIf="form.controls.nombre.errors != undefined">
+                        <div class="errorEnValidacion" *ngIf="form.controls.nombre.errors.required">Debe introducir
+                            algún valor
+                        </div>
+                    </ng-container>
+                    <mat-hint>Nombre</mat-hint>    
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Apellidos</mat-label>
+                    <input matInput type="text" placeholder="Placeholder" formControlName="apellidos">
+                    <ng-container *ngIf="form.controls.apellidos.errors != undefined">
+                        <div class="errorEnValidacion" *ngIf="form.controls.apellidos.errors.required">Debe introducir
+                            algún valor
+                        </div>
+                    </ng-container>
+                    <mat-hint>Apellidos</mat-hint> 
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Fecha de nacimiento</mat-label>
+                    <input matInput [matDatepicker]="picker" formControlName="fechaNacimiento">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                    <ng-container *ngIf="form.controls.fechaNacimiento.errors != undefined">
+                        <div class="errorEnValidacion" *ngIf="form.controls.fechaNacimiento.errors.required">Debe
+                            introducir algún valor</div>
+                    </ng-container>
+                    <mat-hint>Fecha</mat-hint> 
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Dni</mat-label>
+                    <input matInput type="text" placeholder="Placeholder" formControlName="dni">
+                    <ng-container *ngIf="form.controls.dni.errors != undefined">
+                        <div class="errorEnValidacion" *ngIf="form.controls.dni.errors.required">Debe
+                            introducir algún valor</div>
+                    </ng-container>
+                    <mat-hint>Dni</mat-hint> 
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Direccion</mat-label>
+                    <input matInput type="text" placeholder="Placeholder" formControlName="direccion">
+                    <ng-container *ngIf="form.controls.direccion.errors != undefined">
+                        <div class="errorEnValidacion" *ngIf="form.controls.direccion.errors.required">Debe
+                            introducir algún valor</div>
+                    </ng-container>
+                    <mat-hint>Direccion</mat-hint>    
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Municipio</mat-label>
+                    <input matInput type="text" placeholder="Placeholder" formControlName="municipio">
+                    <ng-container *ngIf="form.controls.municipio.errors != undefined">
+                        <div class="errorEnValidacion" *ngIf="form.controls.municipio.errors.required">Debe
+                            introducir algún valor</div>
+                    </ng-container>
+                    <mat-hint>Municipio</mat-hint> 
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Cp</mat-label>
+                    <input matInput type="number" placeholder="Placeholder" formControlName="cp">
+                    <ng-container *ngIf="form.controls.cp.errors != undefined">
+                        <div class="errorEnValidacion" *ngIf="form.controls.cp.errors.required">Debe
+                            introducir algún valor</div>
+                    </ng-container>
+                    <mat-hint>Cp</mat-hint> 
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Teléfono</mat-label>
+                    <input  matInput type="text" formControlName="telefono" required>
+                    <mat-icon matSuffix>phone</mat-icon>  
+                    <ng-container *ngIf="form.controls.telefono.errors != undefined">
+                        <div class="errorEnValidacion" *ngIf="form.controls.telefono.errors.required">Debe
+                            introducir algún valor</div>
+                    </ng-container>          
+                    <mat-hint>Teléfono</mat-hint>    
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Email</mat-label>
+                    <input matInput type="text" placeholder="direccion@example.com" formControlName="email">
+                    <mat-hint>Email</mat-hint> 
+                    <ng-container *ngIf="form.controls.email.errors != undefined">
+                        <div class="errorEnValidacion" *ngIf="form.controls.email.errors.required">Debe introducir algún
+                            valor</div>
+                        <div class="errorEnValidacion" *ngIf="form.controls.email.errors.email">El texto no es un correo
+                            electrónico/div></div>
+                    </ng-container>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Contraseña</mat-label>
+                    <input matInput [type]="ocultarPassword ? 'password' : 'text'" formControlName="password">
+                    <button mat-icon-button matSuffix (click)="ocultarPassword = !ocultarPassword">
+                        <mat-icon>{{ocultarPassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                    <ng-container *ngIf="form.controls.password.errors != undefined">
+                        <div class="errorEnValidacion" *ngIf="form.controls.password.errors.required">Debe introducir algún valor
+                        </div>
+                    </ng-container>
+                </mat-form-field>
+
+                <mat-form-field class="invisible example-full-width">
+                    <input matInput [value]="usuario" ngModel  formControlName="rol">
+                 </mat-form-field>
+
+            </form>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button color="primary" [disabled]="form.invalid" (click)="crearUsuario()">
+                Añadir</button>
+        </mat-card-actions>
+    </mat-card>
+</div>
+

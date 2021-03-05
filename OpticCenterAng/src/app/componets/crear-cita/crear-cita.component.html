@@ -1,0 +1,57 @@
+
+<div class="main-div">
+    <mat-card class="loginCard">
+        <mat-card-title>Registrar cita</mat-card-title> 
+        <br>
+        <mat-card-content>
+            <div id="divImagen">
+                <img mat-card-image src="assets/images/fotoCitas.jpg" alt="Foto de aparato de medición">
+            </div>
+            <form [formGroup] = "form">
+                <mat-form-field appearance="outline">
+                    <mat-label>Fecha</mat-label>
+                    <input matInput [matDatepicker]="picker" placeholder="Fecha" formControlName="fecha">    
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                    <ng-container *ngIf="form.controls.fecha.errors != undefined">
+                        <div class="errorEnValidacion" *ngIf="form.controls.fecha.errors.required">Debe
+                            introducir algún valor</div>
+                    </ng-container>
+                    <mat-hint>Fecha</mat-hint>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Descripción de la visita</mat-label>
+                    <textarea matInput placeholder="Introduce la descripción de la visita" formControlName="graduacion"></textarea>
+                    <ng-container *ngIf="form.controls.graduacion.errors != undefined">
+                        <div class="errorEnValidacion" *ngIf="form.controls.graduacion.errors.required">Debe
+                            introducir algún valor</div>
+                    </ng-container>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Usuarios</mat-label>
+                    <mat-select formControlName="id_usuario">
+                        <mat-option *ngFor="let usuario of usuarios" [value]="usuario.id">
+                          {{usuario.dni}} -- {{usuario.nombre}} {{usuario.apellidos}} 
+                        </mat-option>
+                      </mat-select>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Productos</mat-label>
+                    <mat-select formControlName="id_producto">
+                        <mat-option *ngFor="let producto of productos" [value]="producto.id">
+                          {{producto.referencia}}
+                        </mat-option>
+                      </mat-select>
+                </mat-form-field>
+
+            </form>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button color="primary" (click)="crearCita()">
+                Añadir</button>
+        </mat-card-actions>
+    </mat-card>
+</div>

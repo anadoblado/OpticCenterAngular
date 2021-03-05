@@ -1,0 +1,38 @@
+<div class="main-div">
+<mat-card class="loginCard">
+    <mat-card-header>
+        <mat-card-title>Modificar Producto</mat-card-title>
+    </mat-card-header>
+    <br>
+    <mat-card-content>
+        <form [formGroup]="form">
+            <div id="divCambiarImagen">
+                <button mat-button (click)="fileInput.click()">
+                    <img mat-card-image src="data:image/png;base64,{{producto.imagen}}" alt="">
+                </button>
+                <input hidden (change)="productoSeleccionaFicheroImagen()" #fileInput type="file" id="file">
+            </div>
+            <mat-form-field appearance="outline">
+                <mat-label>Referencia</mat-label>
+                <input matInput placeholder="Referemcia del producto" formControlName="referencia">
+              
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Color</mat-label>
+                <input matInput placeholder="Color del producto" formControlName="color">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Precio</mat-label>
+                <input matInput placeholder="Precio" formControlName="precio">
+                
+            </mat-form-field>
+
+        </form>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-raised-button color="primary" [disabled]="form.invalid" (click)="modificarProductoActual()">
+            Guardar cambios</button>
+        
+    </mat-card-actions>
+</mat-card>
+</div>

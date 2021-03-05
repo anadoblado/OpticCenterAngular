@@ -1,0 +1,60 @@
+<div class="container">
+    <div class="row ">
+        <div class="col-3 main-div">
+            <!-- card para las citas nuevas -->
+            <mat-card class="example-card">
+                <mat-card-header  class="textCenter">
+                  <mat-card-title>Registrar visita</mat-card-title>
+                  <mat-card-subtitle>Generar registro de la cita nueva</mat-card-subtitle>
+                </mat-card-header>
+                <img mat-card-image src="assets/images/citas.jpg" alt="Foto de niño feliz">
+                <mat-card-content>
+                  <p>
+                    Asegúrate de tener todos los datos de la usuaria o usuario.
+                  </p>
+                </mat-card-content>
+                <mat-card-actions>
+                  <button mat-raised-button color="primary" (click)=" navegarACitaNueva()">Entrar</button>  
+                </mat-card-actions>
+            </mat-card>
+
+              <!-- card para ver el inventario de productos -->
+              <mat-card class="example-card">
+                <mat-card-header class="textCenter">
+                 
+                  <mat-card-title>Productos</mat-card-title>
+                  <mat-card-subtitle>Ver el listado de productos</mat-card-subtitle>
+                </mat-card-header>
+                <img mat-card-image color="primary" src="assets/images/catalog.jpeg" alt="Catalog products">
+                <mat-card-content>
+                  <p>
+                    Ver el catálogo de productos disponbles en la tienda.
+                  </p>
+                </mat-card-content>
+                <mat-card-actions>
+                  <button mat-raised-button color="primary" (click)=" navegarHaciaListadoProductos()">Entrar</button>  
+                </mat-card-actions>
+              </mat-card>
+
+              <!-- card para listado de usuarios -->
+              <mat-card class="example-card">
+                <mat-card-header class="textCenter">
+                  
+                  <mat-card-title>Listado de usuarios</mat-card-title>
+                  <mat-card-subtitle>Ver la lista de usuarios</mat-card-subtitle>
+                </mat-card-header>
+                <img mat-card-image src="assets/images/usuarios.jpg" height="70%" alt="Usuarios">
+                <mat-card-content>
+                  <p>
+                    Listado de todas nuestras clientas y clientes.
+                  </p>
+                </mat-card-content>
+                <mat-card-actions>
+                  <button mat-raised-button color="primary" (click)=" navegarHaciaListadoUsuarios()">Entrar</button>  
+                </mat-card-actions>
+              </mat-card>
+        </div>
+    </div>
+</div>
+
+  

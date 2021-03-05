@@ -1,0 +1,27 @@
+.loginCard {
+    max-width: 800px;
+    text-align: center;
+}
+mat-form-field {
+    width: 100%;
+}
+mat-card {
+    width: 600px;
+    text-align: center;
+}
+.main-div {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+}
+.centrarTitulo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+img{
+    width: 400px;
+    margin-top: 50px;
+}

@@ -1,0 +1,73 @@
+.contenedorTabla {
+  position: relative;
+  min-height: 200px;
+}
+
+table {
+  width: 100%;
+}
+
+tr.element-row:hover {
+  background: whitesmoke;
+  cursor: pointer;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.mat-divider-vertical {
+  height: 30px;
+  width: 0px !important;
+  position: inherit !important;
+}
+
+.tab-icon {
+  margin-right: 10px;
+}
+
+.principalItems {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.imagenActividad {
+  margin: 0.5rem;
+}
+
+.example-card {
+  max-width: 450px;
+  min-width: 400px;
+  margin-left: 20px;
+  margin-top: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+mat-card {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  margin: 10px;
+  text-align: center;
+}
+
+.centrar {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.textCenter {
+  align-content: center;
+  justify-content: center;
+}
+
+img {
+  width: 400px;
+  height: 300px;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
